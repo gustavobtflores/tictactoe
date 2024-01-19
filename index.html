@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./UI.js" defer type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>TicTacToe - NegaMax</title>
+  </head>
+  <body>
+    <table id="board" data-user-turn="X">
+      <tr>
+        <td id="square-0"></td>
+        <td id="square-1"></td>
+        <td id="square-2"></td>
+      </tr>
+      <tr>
+        <td id="square-3"></td>
+        <td id="square-4"></td>
+        <td id="square-5"></td>
+      </tr>
+      <tr>
+        <td id="square-6"></td>
+        <td id="square-7"></td>
+        <td id="square-8"></td>
+      </tr>
+    </table>
+    <!-- <div id="ai-stats">
+      <div style="display: flex; gap: 12px; min-width: 300px">
+        Game status:
+        <p id="game-status">Running</p>
+      </div>
+      <div style="display: flex; gap: 12px; min-width: 300px">
+        Positions evaluated:
+        <p id="evaluations"></p>
+      </div>
+      <div style="display: flex; gap: 12px; min-width: 300px">
+        Search time:
+        <p id="search-time"></p>
+      </div>
+      <div style="display: flex; gap: 12px; min-width: 300px">
+        Depth:
+        <p id="depth"></p>
+      </div>
+    </div> -->
+    <div class="game-options">
+      <button id="human-vs-bot">Human vs Bot</button>
+      <button id="bot-vs-bot">Bot vs Bot</button>
+    </div>
+  </body>
+</html>

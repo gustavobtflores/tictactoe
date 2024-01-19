@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  background: #111;
+  color: #eee;
+  font-family: 'Roboto', sans-serif;
+}
+
+table,
+td {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 60px;
+  position: relative;
+}
+
+#board td::before {
+  position: absolute;
+  content: '\d7';
+  font-size: 200px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  line-height: 0;
+}
+
+#board[data-user-turn='X'] td:not([data-value]):hover::before {
+  opacity: 0.5;
+}
+
+td[data-value='X']::before {
+  opacity: 1 !important;
+}
+
+#board td::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  border: 8px solid #388697;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+#board[data-user-turn='O'] td:not([data-value]):hover::after {
+  opacity: 0.5;
+}
+
+td[data-value='O']::after {
+  opacity: 1 !important;
+}
+
+tr + tr td {
+  border-top: 1px solid #eee;
+}
+
+td:nth-of-type(2n) {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+.game-options {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.game-options button {
+  padding: 12px 24px;
+  background: #202020;
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+  color: #f4f4f4;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.game-options button:hover {
+  background: #303030;
+}
