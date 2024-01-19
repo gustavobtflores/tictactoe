@@ -64,14 +64,16 @@ export class ChallengeController {
   }
 
   async playMove(play) {
-    await this.wait(500);
+    if (this.xPlayer instanceof AI && this.oPlayer instanceof AI) {
+      await this.wait(250);
+    }
 
     this.board.play(play);
     this.togglePlayer();
     const isHuman = this.playerToPlay instanceof HumanPlayer;
 
     if (this.board.isGameEnded()) {
-      this.boardUI.render(this.board);
+      this.boardUI.render(this.board, isHuman, true);
     } else {
       this.boardUI.render(this.board, isHuman);
       this.notifyTurn();
